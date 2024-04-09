@@ -1,0 +1,33 @@
+[package]
+name = "weather"
+version = "0.0.0"
+authors = ["Hieu Le <levanhieuhust@gmail.com>"]
+license = "MIT"
+description = "weather tool"
+homepage = ""
+repository = ""
+readme = ""
+keywords = ["celsius", "fahrenheit", "temperature", "weather"]
+categories = ["command-line-utilities", "network-programming"]
+edition = "2018"
+
+[profile.release]
+lto = true
+opt-level = "z"
+codegen-units = 1
+panic = "abort"
+
+[dependencies]
+thiserror = "1.0"
+anyhow = "1.0"
+getopts = "0.2"
+tokio = { version = "1", features = ["macros"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+reqwest = { version = "0.11", default-features = false, features = [
+    "rustls-tls",
+    "gzip",
+    "json",
+] }
+indicatif = "0.16"
+humantime = "2.1"
