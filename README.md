@@ -1,10 +1,16 @@
 # `weather`
 weather tool.
 
+## Build
+```
+cargo build
+```
+
 ## Usage
 
 ```
-Usage: weather [options] [city name[,state code][,country code]]
+Usage: ./target/debug/weather [options] [city name[,country code]]
+Eg: ./target/debug/weather -f Hanoi[VN]
 
 Options:
     -p, --location-provider 0 to 3
